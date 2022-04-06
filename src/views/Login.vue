@@ -23,7 +23,7 @@ export default {
     },
     Login() {
       //chamada back-end/autent
-    }
+    },
   },
 };
 </script>
@@ -64,16 +64,15 @@ export default {
             <div class="text-center mt-5">
               <button
                 type="submit"
-                class="btn btn-submit btn-lg btn-block px-5" @click="Login()"
+                class="btn btn-submit btn-lg btn-block px-5"
+                @click="Login()"
               >
                 Entrar
               </button>
             </div>
           </div>
           <div class="text-center mt-3">
-            <a href="#Registrar"
-              ><b>Registre-se aqui</b></a
-            >
+            <a href="/cadastro"><b>Registre-se aqui</b></a>
           </div>
         </div>
 
@@ -117,4 +116,9 @@ label {
   background-color: #0263b0;
   color: white;
 }
+
+button:hover {
+  color: white;
+}
+
 </style>

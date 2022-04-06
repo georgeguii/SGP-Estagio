@@ -15,7 +15,7 @@
 <style scoped>
 
     #footer {
-        margin-top: 18%;
+        margin-top: 17%;
     }
 
     #footer p {
@@ -23,7 +23,7 @@
         padding: 0;
         text-align: center;
         font-size: 10px;
-        color: #707070;
+        color: black;
         bottom: 0;
         font-weight: bold;
     }

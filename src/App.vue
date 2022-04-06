@@ -1,10 +1,10 @@
 <script setup>
 import { RouterLink, RouterView } from "vue-router";
 import Login from "./views/Login.vue";
+import Cadastro from "./views/Cadastro.vue";
 </script>
 
 <template>
-  <Login />
   <RouterView />
 </template>
 
@@ -15,4 +15,7 @@ import Login from "./views/Login.vue";
   font-family: Arial, Helvetica, sans-serif;
   font-size: 14px;
 }
+
+
+
 </style>
