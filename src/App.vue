@@ -5,6 +5,7 @@ import Cadastro from "./views/Cadastro.vue";
 </script>
 
 <template>
+  <notifications />
   <RouterView />
 </template>
 
