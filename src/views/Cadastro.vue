@@ -7,7 +7,7 @@ export default {
   name: "Cadastro",
   components: {
     Input,
-    Footer,
+    Footer
   },
   data() {
     return {
@@ -20,18 +20,28 @@ export default {
   },
   methods: {
     signUp() {
-        console.log(this.role)
+      console.log(this.role);
       var result = this.comparePassword();
-      if (!result) return;
+      if (!result) {
+        console.log("Senhas diferentes.");
+        this.$notify({
+          title: "Senhas difentes",
+          type: "warn",
+          text: "As senhas digitadas não equivalem!",
+        });
+      } else {
+        var role = this.role == "Empregado" ? 0 : 1;
 
-      var role = this.role == "Empregado"? 0:1
+        Users.signUp({
+          name: this.name,
+          email: this.email,
+          role,
+          password: this.password,
+        });
 
-      Users.signUp({
-        name: this.name,
-        email: this.email,
-        role,
-        password: this.password,
-      });
+        //setTimeout(function() {window.location.href = "http://localhost:3000/"}, 4500);
+        
+      }
     },
     comparePassword() {
       return this.password == this.confirmPassword;
