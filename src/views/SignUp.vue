@@ -4,10 +4,10 @@ import Input from "../components/Input.vue";
 import Users from "../services/Users.js";
 
 export default {
-  name: "Cadastro",
+  name: "signUp",
   components: {
     Input,
-    Footer
+    Footer,
   },
   data() {
     return {
@@ -20,10 +20,18 @@ export default {
   },
   methods: {
     signUp() {
-      console.log(this.role);
+      if (!this.password) {
+        this.$notify({
+          title: "Senhas vazia",
+          type: "warn",
+          text: "As senhas não podem estar vazias!",
+        });
+        return;
+      }
+
       var result = this.comparePassword();
+
       if (!result) {
-        console.log("Senhas diferentes.");
         this.$notify({
           title: "Senhas difentes",
           type: "warn",
@@ -38,9 +46,6 @@ export default {
           role,
           password: this.password,
         });
-
-        //setTimeout(function() {window.location.href = "http://localhost:3000/"}, 4500);
-        
       }
     },
     comparePassword() {
@@ -52,7 +57,7 @@ export default {
 
 <template>
   <div class="container-fluid">
-    <div class="cadastro">
+    <div class="signUp">
       <div class="w-50 mx-auto">
         <div>
           <img
@@ -143,7 +148,7 @@ option {
   padding: 10px 20px;
 }
 
-.cadastro {
+.signUp {
   align-items: center;
   justify-content: center;
   margin-top: 4%;

@@ -1,5 +1,6 @@
 <script>
 import Footer from "../components/Footer.vue";
+import Users from "../services/Users.js";
 
 export default {
   name: "HomeView",
@@ -11,6 +12,8 @@ export default {
       showPassword: false,
       inputPasswordType: "password",
       iconPassword: ["fas", "eye"],
+      email: "",
+      password: "",
     };
   },
   methods: {
@@ -22,7 +25,10 @@ export default {
       this.inputPasswordType = this.showPassword ? "text" : "password";
     },
     Login() {
-      //chamada back-end/autent
+      Users.login({
+        email: this.email,
+        password: this.password,
+      });
     },
   },
 };
@@ -42,12 +48,13 @@ export default {
           />
 
           <div class="w-75 mx-auto">
-            <label class="mt-5">Usuário:</label>
+            <label class="mt-5">E-mail:</label>
             <div class="input-group">
               <input
                 type="text"
                 class="form-control"
-                placeholder="Digite o usuário"
+                v-model="email"
+                placeholder="Digite o email"
               />
             </div>
             <label class="mt-3">Senha:</label>
@@ -55,6 +62,7 @@ export default {
               <input
                 :type="inputPasswordType"
                 class="form-control"
+                v-model="password"
                 placeholder="Digite o senha"
               />
               <span class="input-group-text" @click="showPass()"
@@ -72,7 +80,7 @@ export default {
             </div>
           </div>
           <div class="text-center mt-3">
-            <a href="/cadastro"><b>Registre-se aqui</b></a>
+            <a href="/signUp"><b>Registre-se aqui</b></a>
           </div>
         </div>
 
@@ -120,5 +128,4 @@ label {
 button:hover {
   color: white;
 }
-
 </style>
