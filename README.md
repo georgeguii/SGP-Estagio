@@ -1,29 +1,33 @@
-# Spg-estagio
+# Sistema de autenticação com Vue, .NET e MongoDB
 
-This template should help get you started developing with Vue 3 in Vite.
+Esse projeto utiliza Vue no front-end, .NET para o back-end e MongoDB para o banco de dados. <br/>
 
-## Recommended IDE Setup
+## Instalação
+É preciso ter o [Node.js](https://nodejs.org), o [SDK](https://dotnet.microsoft.com/en-us/download/dotnet/6.0) e o [MongoDB Server](https://www.mongodb.com/try/download/community) instalados na sua máquina, e, após isso clonar o repositório:
+```sh
+$ git clone https://github.com/georgeguii/SGP-Estagio-Front
+```
+<hr>
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.vscode-typescript-vue-plugin).
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vitejs.dev/config/).
-
-## Project Setup
+Para rodar o back-end, devemos entrar nas pastas "back_end" e a seguir "SpgEstagioTeste":
 
 ```sh
-npm install
+$ cd back_end && cd SpgEstagioTeste
 ```
 
-### Compile and Hot-Reload for Development
-
+E rodar o comando:
 ```sh
-npm run dev
+$ dotnet run
 ```
 
-### Compile and Minify for Production
+<hr>
+A seguir, sairemos das pastas do back, entraremos na pasta do front-end e instalaremos as dependências:
 
 ```sh
-npm run build
+$ cd front_end && npm install
+```
+
+Em seguida rodar o front-end:
+```sh
+$ front_end npm run dev
 ```
